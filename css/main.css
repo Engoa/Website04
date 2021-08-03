@@ -12,7 +12,8 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
-.btn-anim:hover {
+.btn-anim:hover,
+.btn-anim:focus {
   -webkit-transform: translateY(-8px);
           transform: translateY(-8px);
 }
@@ -23,21 +24,29 @@ nav {
   display: flex;
   padding: 3rem;
   background-color: #1c2431;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+nav img {
+  max-width: 70%;
+  height: auto;
+  margin-right: auto;
 }
 
 nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 4rem;
+  gap: 2rem;
+  margin-left: auto;
   list-style: none;
-  margin-right: 5rem;
+  white-space: nowrap;
+  text-transform: lowercase;
 }
 
 nav a {
@@ -45,12 +54,35 @@ nav a {
   text-decoration: none;
   font-family: "Raleway", sans-serif;
   font-size: 1rem;
-  display: block;
+  display: inline-block;
   opacity: 0.8;
   -webkit-transition: -webkit-transform 250ms;
   transition: -webkit-transform 250ms;
   transition: transform 250ms;
   transition: transform 250ms, -webkit-transform 250ms;
+  position: relative;
+}
+
+nav li a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background-color: white;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 250ms ease-in-out;
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+}
+
+nav a:hover::before,
+nav a:focus::before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
 }
 
 header {
@@ -73,7 +105,7 @@ header {
 }
 
 header img {
-  max-width: 40%;
+  max-width: 85%;
   height: auto;
   background-size: cover;
   margin-bottom: 3rem;
@@ -82,18 +114,21 @@ header img {
 header a {
   color: white;
   text-decoration: none;
+  font-size: 1.1rem;
   font-weight: bold;
   padding: 1rem 5rem 1rem 5rem;
-  margin-left: 3rem;
   display: inline-block;
-  background: -webkit-gradient(linear, right top, left top, from(#339ecc), to(#65e2d9));
-  background: linear-gradient(to left, #339ecc, #65e2d9);
+  background: -webkit-gradient(linear, left top, right top, from(#339ecc), to(#65e2d9));
+  background: linear-gradient(to right, #339ecc, #65e2d9);
   border-radius: 2rem;
   font-family: "Raleway", sans-serif;
   -webkit-transition: -webkit-transform 250ms;
   transition: -webkit-transform 250ms;
   transition: transform 250ms;
   transition: transform 250ms, -webkit-transform 250ms;
+  -webkit-transition: 250ms ease-in-out;
+  transition: 250ms ease-in-out;
+  z-index: 1;
 }
 
 #text-container {
@@ -121,7 +156,7 @@ header a {
 .wave svg {
   position: absolute;
   background-repeat: no-repeat;
-  bottom: 0;
+  bottom: -1rem;
   max-width: 100%;
   z-index: 0;
 }
@@ -143,15 +178,18 @@ header a {
   background: linear-gradient(to bottom, #181f2a, #181f2a);
   color: white;
   padding-top: 5rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+}
+
+#maincontainer .child1,
+#maincontainer .child2 {
+  margin-right: 2rem;
 }
 
 #maincontainer p {
   margin-bottom: 7rem;
   font-size: 1rem;
   opacity: 0.8;
-  white-space: pre;
+  white-space: pre-wrap;
 }
 
 .child1 h2,
@@ -276,7 +314,7 @@ header a {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  padding-bottom: 10rem;
+  padding-bottom: 25rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -373,15 +411,18 @@ header a {
   text-align: center;
   background: -webkit-gradient(linear, left bottom, left top, from(#181f2a), to(#181f2a));
   background: linear-gradient(to Top, #181f2a, #181f2a);
+  position: relative;
+  padding-bottom: 6rem;
 }
 
 #newslettercontainer div {
-  padding: 1rem 4rem 5.5rem 4rem;
+  padding: 1rem 4rem 2.5rem 4rem;
   background: #1c2431;
   -webkit-box-shadow: 15px 15px 0.5rem #0b1523;
           box-shadow: 15px 15px 0.5rem #0b1523;
   border-radius: 1rem;
   margin-top: 5rem;
+  margin: 5rem 2rem 0 2rem;
   color: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -393,9 +434,7 @@ header a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  max-height: 350px;
-  position: relative;
-  top: 10rem;
+  position: absolute;
 }
 
 #newslettercontainer h2 {
@@ -417,7 +456,7 @@ header a {
   padding-bottom: 1rem;
   padding-left: 1rem;
   text-align: left;
-  border-radius: 2rem;
+  border-radius: 1.2rem;
 }
 
 #newslettercontainer input::-webkit-input-placeholder {
@@ -447,7 +486,13 @@ header a {
 
 #newslettercontainer .newsletterbtn {
   color: white;
+  margin: 0 auto;
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   text-decoration: none;
+  font-size: 1.1rem;
   font-weight: bold;
   padding: 1rem 2rem 1rem 2rem;
   background: -webkit-gradient(linear, right top, left top, from(#339ecc), to(#65e2d9));
@@ -458,9 +503,6 @@ header a {
   transition: -webkit-transform 250ms;
   transition: transform 250ms;
   transition: transform 250ms, -webkit-transform 250ms;
-  position: absolute;
-  bottom: 1rem;
-  left: 40%;
 }
 
 .footer-container {
@@ -479,6 +521,7 @@ header a {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   color: white;
+  text-transform: lowercase;
 }
 
 .footer-container li {
@@ -489,6 +532,7 @@ header a {
 .footer-container span {
   position: relative;
   opacity: 0.85;
+  text-transform: capitalize;
 }
 
 .footer-container span:nth-of-type(1)::before {
@@ -509,12 +553,34 @@ header a {
   opacity: 0.85;
 }
 
-.footer-container a:hover {
-  font-weight: bold;
-}
-
 .footer-container .socialicons a {
   font-size: 1.4rem;
   padding: 0.8rem;
+}
+
+.footer-container li a {
+  position: relative;
+}
+
+.footer-container a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background-color: white;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 250ms ease-in-out;
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+}
+
+.footer-container a:hover::before,
+.footer-container a:focus::before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
 }
 /*# sourceMappingURL=main.css.map */

@@ -32,7 +32,8 @@ body {
 
 //  Button animations classes
 
-.btn-anim:hover {
+.btn-anim:hover,
+.btn-anim:focus {
   transform: translateY(-8px);
 }
 
@@ -43,14 +44,22 @@ nav {
   display: flex;
   padding: 3rem;
   background-color: hsl(217, 28%, 15%);
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+
+  img {
+    max-width: 70%;
+    height: auto;
+    margin-right: auto;
+  }
 
   ul {
     display: flex;
-    gap: 4rem;
+    gap: 2rem;
+    margin-left: auto;
     list-style: none;
-    margin-right: 5rem;
+    white-space: nowrap;
+    text-transform: lowercase;
   }
 
   a {
@@ -58,9 +67,27 @@ nav {
     text-decoration: none;
     font-family: "Raleway", sans-serif;
     font-size: 1rem;
-    display: block;
+    display: inline-block;
     opacity: 0.8;
     transition: transform 250ms;
+    position: relative;
+  }
+
+  li a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: $primaryclr;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+  }
+
+  a:hover::before,
+  a:focus::before {
+    transform: scaleX(1);
   }
 }
 
@@ -79,7 +106,7 @@ header {
   z-index: 1;
 
   img {
-    max-width: 40%;
+    max-width: 85%;
     height: auto;
     background-size: cover;
     margin-bottom: 3rem;
@@ -88,18 +115,20 @@ header {
   a {
     color: $primaryclr;
     text-decoration: none;
+    font-size: 1.1rem;
     font-weight: bold;
     padding: 1rem 5rem 1rem 5rem;
-    margin-left: 3rem;
     display: inline-block;
     background: linear-gradient(
-      to left,
+      to right,
       hsl(198, 60%, 50%),
       hsl(176, 68%, 64%)
     );
     border-radius: 2rem;
     font-family: "Raleway", sans-serif;
     transition: transform 250ms;
+    transition: 250ms ease-in-out;
+    z-index: 1;
   }
 }
 
@@ -126,7 +155,7 @@ header {
   svg {
     position: absolute;
     background-repeat: no-repeat;
-    bottom: 0;
+    bottom: -1rem;
     max-width: 100%;
     z-index: 0;
   }
@@ -144,14 +173,17 @@ header {
   background: linear-gradient(to bottom, $bg-clr, hsl(218, 28%, 13%));
   color: $primaryclr;
   padding-top: 5rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+
+  .child1,
+  .child2 {
+    margin-right: 2rem;
+  }
 
   p {
     margin-bottom: 7rem;
     font-size: 1rem;
     opacity: 0.8;
-    white-space: pre;
+    white-space: pre-wrap;
   }
 }
 
@@ -238,6 +270,7 @@ header {
     font-family: "Raleway", sans-serif;
     transition: transform 250ms;
   }
+
   .topbtn::after {
     content: url(/images/icon-arrow.png);
     margin-left: 0.3rem;
@@ -260,7 +293,7 @@ header {
   text-align: center;
   display: flex;
   justify-content: space-evenly;
-  padding-bottom: 10rem;
+  padding-bottom: 25rem;
   align-items: center;
   flex-wrap: wrap;
   background: linear-gradient(to Top, $bg-clr, hsl(218, 28%, 13%));
@@ -328,20 +361,21 @@ header {
   align-items: center;
   text-align: center;
   background: linear-gradient(to Top, $bg-clr, hsl(218, 28%, 13%));
+  position: relative;
+  padding-bottom: 6rem;
 
   div {
-    padding: 1rem 4rem 5.5rem 4rem;
+    padding: 1rem 4rem 2.5rem 4rem;
     background: hsl(217, 28%, 15%);
     box-shadow: 15px 15px 0.5rem hsl(216, 53%, 9%);
     border-radius: 1rem;
     margin-top: 5rem;
+    margin: 5rem 2rem 0 2rem;
     color: $primaryclr;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-height: 350px;
-    position: relative;
-    top: 10rem;
+    position: absolute;
   }
   h2 {
     font-size: 2rem;
@@ -360,7 +394,7 @@ header {
     padding-bottom: 1rem;
     padding-left: 1rem;
     text-align: left;
-    border-radius: 2rem;
+    border-radius: 1.2rem;
   }
   input::placeholder {
     font-family: "Raleway", sans-serif;
@@ -373,7 +407,11 @@ header {
 
   .newsletterbtn {
     color: $primaryclr;
+    margin: 0 auto;
+    margin-top: 2rem;
+    display: flex;
     text-decoration: none;
+    font-size: 1.1rem;
     font-weight: bold;
     padding: 1rem 2rem 1rem 2rem;
     background: linear-gradient(
@@ -384,9 +422,6 @@ header {
     border-radius: 2rem;
     font-family: "Raleway", sans-serif;
     transition: transform 250ms;
-    position: absolute;
-    bottom: 1rem;
-    left: 40%;
   }
 }
 
@@ -399,6 +434,8 @@ header {
   display: flex;
   flex-wrap: wrap;
   color: hsl(0, 0%, 100%);
+  text-transform: lowercase;
+
 
   li {
     margin-top: 1rem;
@@ -407,6 +444,7 @@ header {
   span {
     position: relative;
     opacity: 0.85;
+    text-transform: capitalize;
   }
 
   span:nth-of-type(1)::before {
@@ -427,12 +465,30 @@ header {
     opacity: 0.85;
   }
 
-  a:hover {
-    font-weight: bold;
-  }
-
   .socialicons a {
     font-size: 1.4rem;
     padding: 0.8rem;
+  }
+}
+
+.footer-container {
+  li a {
+    position: relative;
+
+  }
+  a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: $primaryclr;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+  }
+  a:hover::before,
+  a:focus::before {
+    transform: scaleX(1);
   }
 }
