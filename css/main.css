@@ -22,7 +22,7 @@ nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 3rem;
+  padding: 3rem 2rem 3rem 1rem;
   background-color: #1c2431;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -33,7 +33,7 @@ nav {
 }
 
 nav img {
-  max-width: 70%;
+  max-width: 80%;
   height: auto;
   margin-right: auto;
 }
@@ -102,6 +102,10 @@ header {
   padding: 5rem 2rem 5rem 2rem;
   background: #1c2431;
   z-index: 1;
+}
+
+header p {
+  opacity: 0.8;
 }
 
 header img {
@@ -531,7 +535,7 @@ header a {
 
 .footer-container span {
   position: relative;
-  opacity: 0.85;
+  opacity: 0.8;
   text-transform: capitalize;
 }
 

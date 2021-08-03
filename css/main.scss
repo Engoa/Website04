@@ -42,13 +42,13 @@ body {
 //  Navigation Bar
 nav {
   display: flex;
-  padding: 3rem;
+  padding: 3rem 2rem 3rem 1rem;
   background-color: hsl(217, 28%, 15%);
   justify-content: center;
   align-items: center;
 
   img {
-    max-width: 70%;
+    max-width: 80%;
     height: auto;
     margin-right: auto;
   }
@@ -104,7 +104,9 @@ header {
   padding: 5rem 2rem 5rem 2rem;
   background: hsl(217, 28%, 15%);
   z-index: 1;
-
+  p {
+    opacity: 0.8;
+  }
   img {
     max-width: 85%;
     height: auto;
@@ -436,14 +438,13 @@ header {
   color: hsl(0, 0%, 100%);
   text-transform: lowercase;
 
-
   li {
     margin-top: 1rem;
     list-style-type: none;
   }
   span {
     position: relative;
-    opacity: 0.85;
+    opacity: 0.8;
     text-transform: capitalize;
   }
 
@@ -474,7 +475,6 @@ header {
 .footer-container {
   li a {
     position: relative;
-
   }
   a::before {
     content: "";
