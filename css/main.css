@@ -302,6 +302,8 @@ header a {
 .block2 p,
 .block3 p {
   margin-top: 3rem;
+  font-family: "Raleway", sans-serif;
+  font-size: 0.95rem;
 }
 
 .block1 p,
@@ -479,10 +481,6 @@ header a {
   color: white;
 }
 
-.footer-container div {
-  opacity: 0.85;
-}
-
 .footer-container li {
   margin-top: 1rem;
   list-style-type: none;
@@ -490,6 +488,7 @@ header a {
 
 .footer-container span {
   position: relative;
+  opacity: 0.85;
 }
 
 .footer-container span:nth-of-type(1)::before {

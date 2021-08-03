@@ -237,7 +237,6 @@ header {
     position: relative;
     font-family: "Raleway", sans-serif;
     transition: transform 250ms;
-
   }
   .topbtn::after {
     content: url(/images/icon-arrow.png);
@@ -279,6 +278,8 @@ header {
 
   p {
     margin-top: 3rem;
+    font-family: "Raleway", sans-serif;
+    font-size: 0.95rem;
   }
   p,
   span {
@@ -399,16 +400,13 @@ header {
   flex-wrap: wrap;
   color: hsl(0, 0%, 100%);
 
-  div {
-    opacity: 0.85;
-  }
-
   li {
     margin-top: 1rem;
     list-style-type: none;
   }
   span {
     position: relative;
+    opacity: 0.85;
   }
 
   span:nth-of-type(1)::before {
