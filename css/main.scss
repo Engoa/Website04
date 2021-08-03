@@ -236,6 +236,8 @@ header {
     text-underline-position: under;
     position: relative;
     font-family: "Raleway", sans-serif;
+    transition: transform 250ms;
+
   }
   .topbtn::after {
     content: url(/images/icon-arrow.png);
