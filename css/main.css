@@ -16,6 +16,31 @@ body {
 .btn-anim:focus {
   -webkit-transform: translateY(-8px);
           transform: translateY(-8px);
+  opacity: 1;
+}
+
+header a,
+.newsletterbtn {
+  -webkit-transition: outline-offset 250ms ease, outline-color 250ms ease, -webkit-transform 250ms ease, -webkit-box-shadow 250ms ease;
+  transition: outline-offset 250ms ease, outline-color 250ms ease, -webkit-transform 250ms ease, -webkit-box-shadow 250ms ease;
+  transition: transform 250ms ease, outline-offset 250ms ease, outline-color 250ms ease, box-shadow 250ms ease;
+  transition: transform 250ms ease, outline-offset 250ms ease, outline-color 250ms ease, box-shadow 250ms ease, -webkit-transform 250ms ease, -webkit-box-shadow 250ms ease;
+  outline: 2px solid #339ecc;
+  outline-offset: -2px;
+}
+
+header a:hover,
+header a:focus,
+.newsletterbtn:hover,
+.newsletterbtn:focus {
+  outline-offset: -9px;
+  outline-color: white;
+  -webkit-box-shadow: 3px 6px 0.1rem #0b1523;
+          box-shadow: 3px 6px 0.1rem #0b1523;
+}
+
+input:focus {
+  outline: 2px solid #339ecc;
 }
 
 nav {
@@ -53,14 +78,14 @@ nav a {
   color: white;
   text-decoration: none;
   font-family: "Raleway", sans-serif;
-  font-size: 1rem;
+  font-size: 1.05rem;
   display: inline-block;
   opacity: 0.8;
-  -webkit-transition: -webkit-transform 250ms;
-  transition: -webkit-transform 250ms;
-  transition: transform 250ms;
-  transition: transform 250ms, -webkit-transform 250ms;
   position: relative;
+  -webkit-transition: opacity 250ms ease-in-out, -webkit-transform 250ms ease;
+  transition: opacity 250ms ease-in-out, -webkit-transform 250ms ease;
+  transition: opacity 250ms ease-in-out, transform 250ms ease;
+  transition: opacity 250ms ease-in-out, transform 250ms ease, -webkit-transform 250ms ease;
 }
 
 nav li a::before {
@@ -69,7 +94,7 @@ nav li a::before {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 1px;
+  height: 1.2px;
   background-color: white;
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
@@ -125,14 +150,9 @@ header a {
   background: -webkit-gradient(linear, left top, right top, from(#339ecc), to(#65e2d9));
   background: linear-gradient(to right, #339ecc, #65e2d9);
   border-radius: 2rem;
+  outline: 2px solid #339ecc;
+  outline-offset: -2px;
   font-family: "Raleway", sans-serif;
-  -webkit-transition: -webkit-transform 250ms;
-  transition: -webkit-transform 250ms;
-  transition: transform 250ms;
-  transition: transform 250ms, -webkit-transform 250ms;
-  -webkit-transition: 250ms ease-in-out;
-  transition: 250ms ease-in-out;
-  z-index: 1;
 }
 
 #text-container {
@@ -282,9 +302,7 @@ header a {
   margin-top: 0.5rem;
   font-weight: bold;
   text-align: center;
-  -webkit-text-decoration: 2 underline solid;
-          text-decoration: 2 underline solid;
-  text-underline-position: under;
+  text-decoration: none;
   position: relative;
   font-family: "Raleway", sans-serif;
   -webkit-transition: -webkit-transform 250ms;
@@ -293,10 +311,32 @@ header a {
   transition: transform 250ms, -webkit-transform 250ms;
 }
 
+#mid-container .topbtn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 1px;
+  background-color: #3c9f8f;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 250ms ease-in-out;
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+}
+
+#mid-container .topbtn:hover::before,
+#mid-container .topbtn:focus::before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
 #mid-container .topbtn::after {
   content: url(/images/icon-arrow.png);
   margin-left: 0.3rem;
-  margin-top: 0.15rem;
+  margin-top: 0.1rem;
   position: absolute;
 }
 
@@ -456,11 +496,11 @@ header a {
 }
 
 #newslettercontainer input {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 1rem;
+  padding: 1em 20em 1em 1em;
+  margin: 0 auto;
   text-align: left;
   border-radius: 1.2rem;
+  position: relative;
 }
 
 #newslettercontainer input::-webkit-input-placeholder {
@@ -495,18 +535,19 @@ header a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: absolute;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: bold;
-  padding: 1rem 2rem 1rem 2rem;
+  padding: 0.9em 0.8em;
   background: -webkit-gradient(linear, right top, left top, from(#339ecc), to(#65e2d9));
   background: linear-gradient(to left, #339ecc, #65e2d9);
-  border-radius: 2rem;
+  border-radius: 1.2rem;
   font-family: "Raleway", sans-serif;
-  -webkit-transition: -webkit-transform 250ms;
-  transition: -webkit-transform 250ms;
-  transition: transform 250ms;
-  transition: transform 250ms, -webkit-transform 250ms;
+  top: 9.8em;
+  right: 12.5em;
 }
 
 .footer-container {
@@ -554,7 +595,7 @@ header a {
 .footer-container a {
   text-decoration: none;
   color: white;
-  opacity: 0.85;
+  opacity: 0.8;
 }
 
 .footer-container .socialicons a {
@@ -564,6 +605,18 @@ header a {
 
 .footer-container li a {
   position: relative;
+  display: inline-block;
+  -webkit-transition: opacity 250ms ease, -webkit-transform 250ms ease;
+  transition: opacity 250ms ease, -webkit-transform 250ms ease;
+  transition: opacity 250ms ease, transform 250ms ease;
+  transition: opacity 250ms ease, transform 250ms ease, -webkit-transform 250ms ease;
+}
+
+.footer-container li a:hover,
+.footer-container li a:focus {
+  opacity: 1;
+  -webkit-transform: translateY(-8px);
+          transform: translateY(-8px);
 }
 
 .footer-container a::before {
