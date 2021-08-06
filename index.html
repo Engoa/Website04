@@ -14,7 +14,7 @@
     <nav>
       <a href="#"> <img src="/images/logo.png" alt="Fylo Logo" /></a>
       <ul class="nav-items">
-        <li><a class="btn-anim" href="#">Features</a></li>
+        <li><a class="btn-anim" href="#maincontainer">Features</a></li>
         <li><a class="btn-anim" href="#">Team</a></li>
         <li><a class="btn-anim" href="#">Sign In</a></li>
       </ul>
@@ -23,10 +23,7 @@
     <header>
       <img src="/images/illustration-intro.png" alt="" />
       <div class="text-container">
-        <h1>
-          All your files in one secure location,<br />
-          accessible anywhere.
-        </h1>
+        <h1>All your files in one secure location, accessible anywhere.</h1>
         <p>
           Fylo stores all your most important files in one secure location.
           Access them wherever you need, share and collaborate with friends
@@ -47,7 +44,7 @@
     </div>
     <main>
       <section>
-        <div class="maincontainer">
+        <div class="maincontainer" id="maincontainer">
           <div class="child1">
             <img src="/images/icon-access-anywhere.png" alt="Computer Icon" />
             <h2>Access your files, anywhere.</h2>
@@ -154,21 +151,25 @@
 
     <div class="newslettercontainer">
       <div>
-        <h2>Get early access today</h2>
+        <div class="newsletter-text">
+          <h2>Get early access today</h2>
 
-        <p>
-          It only takes a minute to sign up and use our
-          <strong>free started tier</strong>, It's extremely If you have any
-          questions, <br />Our support team would be more than happy to help!
-        </p>
+          <p>
+            It only takes a minute to <strong>sign up</strong> and use our free
+            started tier, It's extremely If you have any questions, Our support
+            team would be more than happy to help!
+          </p>
+        </div>
 
-        <input
-          type="text"
-          name="email"
-          id="email"
-          placeholder="example.email.com"
-        />
-        <a class="newsletterbtn" href="#">Get started for Free</a>
+        <div class="input-btn-container">
+          <input
+            type="text"
+            name="email"
+            id="email"
+            placeholder="example.email.com"
+          />
+          <a class="newsletterbtn" href="#">Get started for Free</a>
+        </div>
       </div>
     </div>
 

@@ -23,6 +23,7 @@ $primaryclr: hsl(0, 0%, 100%);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -50,7 +51,7 @@ header a:hover,
 header a:focus,
 .newsletterbtn:hover,
 .newsletterbtn:focus {
-  outline-offset: -9px;
+  outline-offset: -10px;
   outline-color: $primaryclr;
   box-shadow: 3px 6px 0.1rem hsl(216, 53%, 9%);
 }
@@ -122,14 +123,14 @@ header {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 5rem 2rem 5rem 2rem;
+  padding: 5rem 2rem 1rem 2rem;
   background: hsl(217, 28%, 15%);
   z-index: 1;
   p {
     opacity: 0.8;
   }
   img {
-    max-width: 85%;
+    max-width: 40%;
     height: auto;
     background-size: cover;
     margin-bottom: 3rem;
@@ -140,16 +141,16 @@ header {
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: bold;
-    padding: 1rem 5rem 1rem 5rem;
+    padding: 1rem 4rem 1rem 4rem;
     display: inline-block;
     background: linear-gradient(
-      to right,
+      to bottom,
       hsl(198, 60%, 50%),
       hsl(176, 68%, 64%)
     );
-    border-radius: 2rem;
-    outline: 2px solid hsl(198, 60%, 50%);
-    outline-offset: -2px;
+    border-radius: 0.5rem;
+    outline: 2px solid white;
+    border: 2px solid white;
     font-family: "Raleway", sans-serif;
   }
 }
@@ -159,6 +160,7 @@ header {
   font-family: "Raleway", sans-serif;
   margin-bottom: 10rem;
   z-index: 1;
+  max-width: 800px;
 
   h1 {
     font-size: 3rem;
@@ -168,20 +170,29 @@ header {
   p {
     font-family: "Open Sans", sans-serif;
     font-size: 1.5rem;
-    max-width: 800px;
     margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
   }
 }
 
 @media only screen and (max-width: 700px) {
+  header {
+    img {
+      max-width: 80%;
+      height: auto;
+    }
+    a {
+      padding: 0.7rem 3rem 0.7rem 3rem;
+    }
+  }
   .text-container {
     h1 {
-      font-size: 1.95rem;
+      font-size: 1.6rem;
     }
 
     p {
-      font-size: 1.2rem;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
     }
   }
 }
@@ -211,38 +222,38 @@ header {
 
   .child1,
   .child2 {
-    margin: 0 3rem 0 3rem;
-
+    margin: 0 2rem 6rem 2rem;
     img {
       margin-bottom: 1rem;
+      margin-top: 3rem;
     }
   }
 
   p {
-    font-size: 1rem;
+    font-size: 0.9rem;
     opacity: 0.8;
-    margin-bottom: 10rem;
     max-width: 600px;
     margin-top: 1rem;
   }
-}
-
-.child1 h2,
-.child2 h2 {
-  font-family: "Raleway", sans-serif;
-  font-size: 1.3rem;
-  font-weight: bold;
+  h2 {
+    font-family: "Raleway", sans-serif;
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
 }
 
 @media only screen and (max-width: 700px) {
   .maincontainer {
     flex-wrap: wrap;
-
-    img {
-      margin-right: 0;
-    }
-    p {
-      margin-bottom: 3rem;
+    .child1,
+    .child2 {
+      img {
+        margin-right: 0;
+        max-width: 25%;
+      }
+      p {
+        margin: 1.5rem;
+      }
     }
   }
 }
@@ -258,8 +269,8 @@ header {
   align-items: center;
   background: linear-gradient(to Top, $bg-clr, hsl(218, 28%, 13%));
   color: $primaryclr;
-  padding-bottom: 10rem;
-
+  padding-bottom: 5rem;
+  padding-top: 6rem;
   margin-bottom: -5rem;
 
   img {
@@ -272,7 +283,7 @@ header {
 
   h2 {
     text-align: left;
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   p {
     opacity: 0.8;
@@ -339,6 +350,7 @@ header {
   padding-bottom: 25rem;
   align-items: center;
   flex-wrap: wrap;
+  margin-top: 5rem;
   background: linear-gradient(to Top, $bg-clr, hsl(218, 28%, 13%));
   font-family: "Open Sans", sans-serif;
   color: $primaryclr;
@@ -426,7 +438,7 @@ header {
   position: relative;
   padding-bottom: 6rem;
 
-  div {
+  > div {
     padding: 1rem 4rem 2.5rem 4rem;
     background: hsl(217, 28%, 15%);
     box-shadow: 15px 15px 0.5rem hsl(216, 53%, 9%);
@@ -450,21 +462,21 @@ header {
   p {
     opacity: 0.8;
     font-size: 1.1rem;
+    max-width: 600px;
   }
+}
+
+.input-btn-container {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 2rem;
   input {
     padding: 1em 20em 1em 1em;
     margin: 0 auto;
     text-align: left;
-    border-radius: 1.2rem;
-    position: relative;
-  }
-  input::placeholder {
-    font-family: "Raleway", sans-serif;
-    font-weight: bold;
-  }
-  a,
-  input {
-    margin-top: 3rem;
+    border-radius: 0.2rem;
+    border: none;
   }
 
   .newsletterbtn {
@@ -477,16 +489,23 @@ header {
     text-decoration: none;
     font-size: 1rem;
     font-weight: bold;
-    padding: 0.9em 0.8em;
+    padding: 0.61em 0.7em;
     background: linear-gradient(
-      to left,
+      to bottom,
       hsl(198, 60%, 50%),
       hsl(176, 68%, 64%)
     );
-    border-radius: 1.2rem;
+    border-radius: 0.2rem;
     font-family: "Raleway", sans-serif;
-    top: 9.8em;
-    right: 12.5em;
+    outline: 2px solid white;
+    border: 2px solid white;
+    top: -2.03rem;
+    right: 0;
+  }
+
+  input::placeholder {
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
   }
 }
 
@@ -498,21 +517,14 @@ header {
       align-items: center;
       justify-content: center;
       text-align: center;
-      max-height: 550px;
+      max-height: 390px;
+      max-width: 500px;
       padding: 0;
     }
     h2 {
       font-size: 1.5rem;
-      margin-top: 2rem;
     }
 
-    h2,
-    p {
-      margin-top: 5rem;
-    }
-    p {
-      margin: 0 1rem 5rem 1rem;
-    }
     input,
     .newsletterbtn {
       position: static;
@@ -521,13 +533,20 @@ header {
       padding: 1em 8.5em 1em 1em;
     }
     .newsletterbtn {
-      padding: 0.8rem 2rem 0.8rem 2rem;
-      margin-bottom: 10rem;
+      padding: 0.7rem 1.1rem 0.7rem 1.1rem;
     }
     .newsletterbtn:hover,
     .newsletterbtn:focus {
       transform: translateY(-8px);
     }
+  }
+  .newsletter-text {
+    margin-top: 6rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .input-btn-container {
+    margin-bottom: 6rem;
   }
 }
 
@@ -639,6 +658,6 @@ header {
   }
 
   .socialicons {
-    margin: 2rem auto;
+    margin: 4rem auto;
   }
 }
