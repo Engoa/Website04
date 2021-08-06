@@ -155,22 +155,33 @@ header a {
   font-family: "Raleway", sans-serif;
 }
 
-#text-container {
+.text-container {
   color: white;
   font-family: "Raleway", sans-serif;
   margin-bottom: 10rem;
   z-index: 1;
 }
 
-#text-container h1 {
+.text-container h1 {
   font-size: 3rem;
   margin-top: 1rem;
 }
 
-#text-container p {
+.text-container p {
   font-family: "Open Sans", sans-serif;
   font-size: 1.5rem;
-  white-space: break-spaces;
+  max-width: 800px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 700px) {
+  .text-container h1 {
+    font-size: 1.95rem;
+  }
+  .text-container p {
+    font-size: 1.2rem;
+  }
 }
 
 .wave {
@@ -185,18 +196,16 @@ header a {
   z-index: 0;
 }
 
-#maincontainer {
+.maincontainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   text-align: center;
   background: -webkit-gradient(linear, left top, left bottom, from(#181f2a), to(#181f2a));
   background: linear-gradient(to bottom, #181f2a, #181f2a);
@@ -204,16 +213,22 @@ header a {
   padding-top: 5rem;
 }
 
-#maincontainer .child1,
-#maincontainer .child2 {
-  margin-right: 2rem;
+.maincontainer .child1,
+.maincontainer .child2 {
+  margin: 0 3rem 0 3rem;
 }
 
-#maincontainer p {
-  margin-bottom: 7rem;
+.maincontainer .child1 img,
+.maincontainer .child2 img {
+  margin-bottom: 1rem;
+}
+
+.maincontainer p {
   font-size: 1rem;
   opacity: 0.8;
-  white-space: pre-wrap;
+  margin-bottom: 10rem;
+  max-width: 600px;
+  margin-top: 1rem;
 }
 
 .child1 h2,
@@ -221,35 +236,19 @@ header a {
   font-family: "Raleway", sans-serif;
   font-size: 1.3rem;
   font-weight: bold;
-  margin-right: 2rem;
 }
 
-.child1 h2:nth-of-type(1)::before {
-  content: url(/images/icon-access-anywhere.png);
-  bottom: 3rem;
-  left: 11rem;
-  position: relative;
-}
-
-.child1 h2:nth-of-type(2)::before {
-  content: url(/images/icon-collaboration.png);
-  bottom: 3rem;
-  left: 10rem;
-  position: relative;
-}
-
-.child2 h2:nth-of-type(1)::before {
-  content: url(/images/icon-security.png);
-  bottom: 3rem;
-  left: 10rem;
-  position: relative;
-}
-
-.child2 h2:nth-of-type(2)::before {
-  content: url(/images/icon-any-file.png);
-  bottom: 3rem;
-  left: 9rem;
-  position: relative;
+@media only screen and (max-width: 700px) {
+  .maincontainer {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .maincontainer img {
+    margin-right: 0;
+  }
+  .maincontainer p {
+    margin-bottom: 3rem;
+  }
 }
 
 #mid-container {
@@ -275,8 +274,8 @@ header a {
   max-width: 85%;
   height: auto;
   background-size: cover;
-  margin-right: 1.5rem;
-  margin-left: 1.5rem;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
 }
 
 #mid-container h2 {
@@ -348,6 +347,8 @@ header a {
 .blocksize {
   max-width: 400px;
   height: 200px;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .blockcontainer {
@@ -375,17 +376,18 @@ header a {
 .block3 {
   background: #202a3c;
   border-radius: 0.3rem;
-  margin-top: 5rem;
   -webkit-box-shadow: 15px 15px 1rem #0b1523;
           box-shadow: 15px 15px 1rem #0b1523;
+  margin: 5rem 3rem 0 3rem;
 }
 
 .block1 p,
 .block2 p,
 .block3 p {
-  margin-top: 3rem;
+  margin-top: 1.5rem;
   font-family: "Raleway", sans-serif;
   font-size: 0.95rem;
+  line-height: 1.45rem;
 }
 
 .block1 p,
@@ -415,8 +417,8 @@ header a {
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: left;
-  margin-top: 1.7rem;
-  margin-left: 4rem;
+  margin-top: 3rem;
+  margin-left: 5rem;
 }
 
 .block1 {
@@ -434,21 +436,36 @@ header a {
 
 .testimonial img {
   border-radius: 50%;
-  max-width: 9%;
+  max-width: 11.3%;
   position: absolute;
-  left: -2.4rem;
-  bottom: 0.35rem;
+  left: -2.5rem;
+  bottom: 0rem;
 }
 
-#newslettercontainer {
+@media only screen and (max-width: 950px) {
+  .testimonial {
+    margin-top: 0.8rem;
+    margin-left: 3.5rem;
+  }
+  img {
+    max-width: 15%;
+    left: -2.5rem;
+  }
+  .blocksize {
+    max-width: 400px;
+    height: 220px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.newslettercontainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -459,13 +476,12 @@ header a {
   padding-bottom: 6rem;
 }
 
-#newslettercontainer div {
+.newslettercontainer div {
   padding: 1rem 4rem 2.5rem 4rem;
   background: #1c2431;
   -webkit-box-shadow: 15px 15px 0.5rem #0b1523;
           box-shadow: 15px 15px 0.5rem #0b1523;
   border-radius: 1rem;
-  margin-top: 5rem;
   margin: 5rem 2rem 0 2rem;
   color: white;
   display: -webkit-box;
@@ -481,7 +497,7 @@ header a {
   position: absolute;
 }
 
-#newslettercontainer h2 {
+.newslettercontainer h2 {
   font-size: 2rem;
   font-family: "Raleway", sans-serif;
   font-weight: bold;
@@ -490,12 +506,12 @@ header a {
   margin-top: 1rem;
 }
 
-#newslettercontainer p {
+.newslettercontainer p {
   opacity: 0.8;
   font-size: 1.1rem;
 }
 
-#newslettercontainer input {
+.newslettercontainer input {
   padding: 1em 20em 1em 1em;
   margin: 0 auto;
   text-align: left;
@@ -503,32 +519,32 @@ header a {
   position: relative;
 }
 
-#newslettercontainer input::-webkit-input-placeholder {
+.newslettercontainer input::-webkit-input-placeholder {
   font-family: "Raleway", sans-serif;
   font-weight: bold;
 }
 
-#newslettercontainer input:-ms-input-placeholder {
+.newslettercontainer input:-ms-input-placeholder {
   font-family: "Raleway", sans-serif;
   font-weight: bold;
 }
 
-#newslettercontainer input::-ms-input-placeholder {
+.newslettercontainer input::-ms-input-placeholder {
   font-family: "Raleway", sans-serif;
   font-weight: bold;
 }
 
-#newslettercontainer input::placeholder {
+.newslettercontainer input::placeholder {
   font-family: "Raleway", sans-serif;
   font-weight: bold;
 }
 
-#newslettercontainer a,
-#newslettercontainer input {
+.newslettercontainer a,
+.newslettercontainer input {
   margin-top: 3rem;
 }
 
-#newslettercontainer .newsletterbtn {
+.newslettercontainer .newsletterbtn {
   color: white;
   margin: 0 auto;
   margin-top: 2rem;
@@ -548,6 +564,54 @@ header a {
   font-family: "Raleway", sans-serif;
   top: 9.8em;
   right: 12.5em;
+}
+
+@media only screen and (max-width: 950px) {
+  .newslettercontainer div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+    max-height: 550px;
+    padding: 0;
+  }
+  .newslettercontainer h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+  }
+  .newslettercontainer h2,
+  .newslettercontainer p {
+    margin-top: 5rem;
+  }
+  .newslettercontainer p {
+    margin: 0 1rem 5rem 1rem;
+  }
+  .newslettercontainer input,
+  .newslettercontainer .newsletterbtn {
+    position: static;
+  }
+  .newslettercontainer input {
+    padding: 1em 8.5em 1em 1em;
+  }
+  .newslettercontainer .newsletterbtn {
+    padding: 0.8rem 2rem 0.8rem 2rem;
+    margin-bottom: 10rem;
+  }
+  .newslettercontainer .newsletterbtn:hover,
+  .newslettercontainer .newsletterbtn:focus {
+    -webkit-transform: translateY(-8px);
+            transform: translateY(-8px);
+  }
 }
 
 .footer-container {
@@ -588,6 +652,12 @@ header a {
 
 .footer-container span:nth-of-type(2)::before {
   content: url(/images/icon-email.png);
+  position: absolute;
+  left: -2rem;
+}
+
+.footer-container span:nth-of-type(3)::before {
+  content: url(/images/icon-location.png);
   position: absolute;
   left: -2rem;
 }
@@ -639,5 +709,42 @@ header a {
 .footer-container a:focus::before {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
+}
+
+@media only screen and (max-width: 950px) {
+  .footer-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 4rem;
+  }
+  .footer-container img {
+    max-width: 100%;
+    height: auto;
+  }
+  .footer-container span {
+    margin: 3rem 0 2rem 5rem;
+  }
+  .footer-container > a {
+    margin: 18rem 0 3rem 3rem;
+  }
+  .footer-container ul {
+    margin: 2rem 0 0 3rem;
+  }
+  .socialicons {
+    margin: 2rem auto;
+  }
 }
 /*# sourceMappingURL=main.css.map */

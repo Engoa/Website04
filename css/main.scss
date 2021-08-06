@@ -154,7 +154,7 @@ header {
   }
 }
 
-#text-container {
+.text-container {
   color: $primaryclr;
   font-family: "Raleway", sans-serif;
   margin-bottom: 10rem;
@@ -168,7 +168,21 @@ header {
   p {
     font-family: "Open Sans", sans-serif;
     font-size: 1.5rem;
-    white-space: break-spaces;
+    max-width: 800px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .text-container {
+    h1 {
+      font-size: 1.95rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
   }
 }
 
@@ -186,11 +200,10 @@ header {
 
 //  Top-Mid Section
 
-#maincontainer {
+.maincontainer {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
   text-align: center;
   background: linear-gradient(to bottom, $bg-clr, hsl(218, 28%, 13%));
   color: $primaryclr;
@@ -198,14 +211,19 @@ header {
 
   .child1,
   .child2 {
-    margin-right: 2rem;
+    margin: 0 3rem 0 3rem;
+
+    img {
+      margin-bottom: 1rem;
+    }
   }
 
   p {
-    margin-bottom: 7rem;
     font-size: 1rem;
     opacity: 0.8;
-    white-space: pre-wrap;
+    margin-bottom: 10rem;
+    max-width: 600px;
+    margin-top: 1rem;
   }
 }
 
@@ -214,36 +232,21 @@ header {
   font-family: "Raleway", sans-serif;
   font-size: 1.3rem;
   font-weight: bold;
-  margin-right: 2rem;
 }
 
-.child1 h2:nth-of-type(1)::before {
-  content: url(/images/icon-access-anywhere.png);
-  bottom: 3rem;
-  left: 11rem;
-  position: relative;
+@media only screen and (max-width: 700px) {
+  .maincontainer {
+    flex-wrap: wrap;
+
+    img {
+      margin-right: 0;
+    }
+    p {
+      margin-bottom: 3rem;
+    }
+  }
 }
 
-.child1 h2:nth-of-type(2)::before {
-  content: url(/images/icon-collaboration.png);
-  bottom: 3rem;
-  left: 10rem;
-  position: relative;
-}
-
-.child2 h2:nth-of-type(1)::before {
-  content: url(/images/icon-security.png);
-  bottom: 3rem;
-  left: 10rem;
-  position: relative;
-}
-
-.child2 h2:nth-of-type(2)::before {
-  content: url(/images/icon-any-file.png);
-  bottom: 3rem;
-  left: 9rem;
-  position: relative;
-}
 //  Top-Mid Section
 
 //  Mid Section
@@ -256,14 +259,15 @@ header {
   background: linear-gradient(to Top, $bg-clr, hsl(218, 28%, 13%));
   color: $primaryclr;
   padding-bottom: 10rem;
+
   margin-bottom: -5rem;
 
   img {
     max-width: 85%;
     height: auto;
     background-size: cover;
-    margin-right: 1.5rem;
-    margin-left: 1.5rem;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
   }
 
   h2 {
@@ -324,6 +328,8 @@ header {
 .blocksize {
   max-width: 400px;
   height: 200px;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .blockcontainer {
@@ -343,13 +349,14 @@ header {
 .block3 {
   background: hsl(219, 30%, 18%);
   border-radius: 0.3rem;
-  margin-top: 5rem;
   box-shadow: 15px 15px 1rem hsl(216, 53%, 9%);
+  margin: 5rem 3rem 0 3rem;
 
   p {
-    margin-top: 3rem;
+    margin-top: 1.5rem;
     font-family: "Raleway", sans-serif;
     font-size: 0.95rem;
+    line-height: 1.45rem;
   }
   p,
   span {
@@ -368,8 +375,8 @@ header {
   display: flex;
   flex-direction: column;
   text-align: left;
-  margin-top: 1.7rem;
-  margin-left: 4rem;
+  margin-top: 3rem;
+  margin-left: 5rem;
 }
 
 .block1 {
@@ -385,16 +392,34 @@ header {
 
 .testimonial img {
   border-radius: 50%;
-  max-width: 9%;
+  max-width: 11.3%;
   position: absolute;
-  left: -2.4rem;
-  bottom: 0.35rem;
+  left: -2.5rem;
+  bottom: 0rem;
 }
 
-#newslettercontainer {
+@media only screen and (max-width: 950px) {
+  .testimonial {
+    margin-top: 0.8rem;
+    margin-left: 3.5rem;
+  }
+
+  img {
+    max-width: 15%;
+    left: -2.5rem;
+  }
+
+  .blocksize {
+    max-width: 400px;
+    height: 220px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.newslettercontainer {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   align-items: center;
   text-align: center;
   background: linear-gradient(to Top, $bg-clr, hsl(218, 28%, 13%));
@@ -406,8 +431,8 @@ header {
     background: hsl(217, 28%, 15%);
     box-shadow: 15px 15px 0.5rem hsl(216, 53%, 9%);
     border-radius: 1rem;
-    margin-top: 5rem;
     margin: 5rem 2rem 0 2rem;
+
     color: $primaryclr;
     display: flex;
     flex-direction: column;
@@ -465,6 +490,47 @@ header {
   }
 }
 
+@media only screen and (max-width: 950px) {
+  .newslettercontainer {
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      max-height: 550px;
+      padding: 0;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    h2,
+    p {
+      margin-top: 5rem;
+    }
+    p {
+      margin: 0 1rem 5rem 1rem;
+    }
+    input,
+    .newsletterbtn {
+      position: static;
+    }
+    input {
+      padding: 1em 8.5em 1em 1em;
+    }
+    .newsletterbtn {
+      padding: 0.8rem 2rem 0.8rem 2rem;
+      margin-bottom: 10rem;
+    }
+    .newsletterbtn:hover,
+    .newsletterbtn:focus {
+      transform: translateY(-8px);
+    }
+  }
+}
+
 .footer-container {
   padding: 18rem 5rem 5rem;
   font-family: "Raleway", sans-serif;
@@ -498,6 +564,12 @@ header {
     left: -2rem;
   }
 
+  span:nth-of-type(3)::before {
+    content: url(/images/icon-location.png);
+    position: absolute;
+    left: -2rem;
+  }
+
   a {
     text-decoration: none;
     color: $primaryclr;
@@ -519,7 +591,7 @@ header {
 
   li a:hover,
   li a:focus {
-    opacity: 1; 
+    opacity: 1;
     transform: translateY(-8px);
   }
   a::before {
@@ -536,5 +608,37 @@ header {
   a:hover::before,
   a:focus::before {
     transform: scaleX(1);
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 4rem;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    span {
+      margin: 3rem 0 2rem 5rem;
+    }
+  }
+
+  .footer-container > a {
+    margin: 18rem 0 3rem 3rem;
+  }
+
+  .footer-container ul {
+    margin: 2rem 0 0 3rem;
+  }
+
+  .socialicons {
+    margin: 2rem auto;
   }
 }
